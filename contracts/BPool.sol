@@ -420,6 +420,7 @@ contract BPool is BBronze, BToken, BMath {
     }
 
 
+    /// if_succeeds {:msg ""} _records[tokenIn].balance == IERC20(tokenIn).balanceOf(address(this));
     function swapExactAmountIn(
         address tokenIn,
         uint tokenAmountIn,

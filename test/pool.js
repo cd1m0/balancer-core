@@ -4,6 +4,7 @@ const { calcOutGivenIn, calcInGivenOut, calcRelativeDiff } = require('../lib/cal
 const BPool = artifacts.require('BPool');
 const BFactory = artifacts.require('BFactory');
 const TToken = artifacts.require('TToken');
+const TDeflToken = artifacts.require('TDeflToken');
 const verbose = process.env.VERBOSE;
 
 contract('BPool', async (accounts) => {
@@ -30,7 +31,7 @@ contract('BPool', async (accounts) => {
         await factory.newBPool();
         pool = await BPool.at(POOL);
 
-        weth = await TToken.new('Wrapped Ether', 'WETH', 18);
+        weth = await TDeflToken.new('Wrapped Ether', 'WETH', 18);
         mkr = await TToken.new('Maker', 'MKR', 18);
         dai = await TToken.new('Dai Stablecoin', 'DAI', 18);
         xxx = await TToken.new('XXX', 'XXX', 18);
