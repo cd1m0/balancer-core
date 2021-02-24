@@ -15,7 +15,7 @@ pragma solidity 0.5.12;
 
 // Test Token
 
-contract TToken {
+contract TDeflToken {
 
     string private _name;
     string private _symbol;
